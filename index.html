@@ -216,9 +216,9 @@ em{font-style:normal;color:var(--green)}
   font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);
 }
 .pay-grid{display:grid}
-.pay-i{padding:20px 16px;border-bottom:1px solid var(--line);display:flex;gap:16px;align-items:baseline}
+.pay-i{padding:20px 16px;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
 .pay-i:last-child{border-bottom:0}
-.pay-n{font-family:var(--disp);font-weight:700;font-size:30px;color:var(--green);letter-spacing:-.05em;flex:none;width:66px}
+.pay-n{font-family:var(--disp);font-weight:700;font-size:30px;color:var(--green);letter-spacing:-.05em;line-height:1}
 .pay-i h3{margin-bottom:3px}
 .pay-i p{font-size:13.5px;color:var(--gray);line-height:1.45}
 
@@ -306,9 +306,9 @@ footer{padding:24px 0 30px;text-align:center;font-family:var(--mono);font-size:1
   .rep-grid{grid-template-columns:repeat(4,1fr)}
   .rep-c{padding:20px 16px}
   .rep-n{font-size:23px}
-  .pay-i{border-bottom:0;border-right:1px solid var(--line);flex-direction:column;gap:12px;padding:26px 22px}
+  .pay-i{border-bottom:0;border-right:1px solid var(--line);gap:12px;padding:26px 22px}
   .pay-i:last-child{border-right:0}
-  .pay-n{font-size:40px;width:auto}
+  .pay-n{font-size:40px}
   .contacts{grid-template-columns:repeat(2,1fr);text-align:center;max-width:640px;margin-left:auto;margin-right:auto}
   .seal{width:180px;height:180px}
   .chat,.chips,.demo-note{margin-left:auto;margin-right:auto}
@@ -670,8 +670,7 @@ footer{padding:24px 0 30px;text-align:center;font-family:var(--mono);font-size:1
 <section class="sec line-top">
   <div class="wrap">
     <div class="rv">
-      <div class="eyebrow">О нас</div>
-      <h2>Кто это<br>собирает</h2>
+      <h2>О нас</h2>
     </div>
 
     <div class="about-ph rv">
@@ -702,7 +701,7 @@ footer{padding:24px 0 30px;text-align:center;font-family:var(--mono);font-size:1
     </svg>
 
     <h2>Соберём ИИ-сотрудника<br>под ваше заведение</h2>
-    <p class="lead">Покажем, как он отвечает вашим гостям, на вашем меню. Без презентаций.</p>
+    <p class="lead">Покажем, как он отвечает вашим гостям, на вашем меню.</p>
 
     <div class="contacts">
       <div><span>WhatsApp и звонки</span><a class="tel js-tel js-phone" href="#">+7 (000) 000-00-00</a></div>
