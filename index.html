@@ -167,13 +167,6 @@ em{font-style:normal;color:var(--green)}
 .st-s{font-family:var(--mono);font-size:9px;letter-spacing:.08em;text-transform:uppercase;color:var(--gray-d);margin-top:12px}
 .src{margin-top:22px;font-size:14px;color:var(--gray-d);line-height:1.6}
 
-/* ===== ЧТО МОЖЕТ ===== */
-.does{margin-top:28px;border-top:1px solid var(--line)}
-.do{display:flex;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)}
-.tick{width:20px;height:20px;flex:none;margin-top:3px;color:var(--green)}
-.do h3{margin-bottom:5px}
-.do p{font-size:15px;color:var(--gray);line-height:1.55}
-
 /* ===== ОТЧЁТ ===== */
 .deliv{background:var(--deep);border-top:1px solid var(--green-d);border-bottom:1px solid var(--line);position:relative;overflow:hidden}
 .deliv::before{
@@ -220,22 +213,87 @@ em{font-style:normal;color:var(--green)}
 .rep-rec li b{color:var(--white);font-weight:500}
 .rep-note{margin-top:22px;font-size:15px;color:var(--gray-d);line-height:1.6;max-width:640px}
 
-/* ===== ЧТО МЕНЯЕТСЯ ===== */
-.cmp{margin-top:28px;border:1px solid var(--line)}
-.cmp-hd,.cmp-r{display:grid;grid-template-columns:1fr 96px 96px}
-.cmp-hd{border-bottom:1px solid var(--line);background:var(--panel)}
-.cmp-hd div{
-  padding:13px 8px;font-family:var(--mono);font-size:9px;letter-spacing:.06em;
-  text-transform:uppercase;color:var(--gray-d);text-align:center;
+/* ===== ВО СКОЛЬКО ОБХОДИТСЯ ===== */
+.cost{margin-top:28px;display:grid;gap:1px;background:var(--line);border:1px solid var(--line)}
+.cost-c{background:var(--bg);padding:24px 20px}
+.cost-l{
+  font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:var(--gray-d);margin-bottom:16px;
 }
-.cmp-hd div:first-child{text-align:left;padding-left:16px}
-.cmp-hd div:last-child{color:var(--green)}
-.cmp-r{border-bottom:1px solid var(--line)}
-.cmp-r:last-child{border-bottom:0}
-.cmp-r>*{padding:16px 8px;font-size:13.5px;text-align:center;display:flex;align-items:center;justify-content:center;line-height:1.4}
-.cmp-r>*:first-child{text-align:left;justify-content:flex-start;padding-left:16px;font-size:15px;color:var(--white)}
-.cmp-h{color:var(--gray-d)}
-.cmp-a{color:var(--green);font-weight:500;background:rgba(24,224,140,.05)}
+.cost-c ul{list-style:none}
+.cost-c li{font-size:15px;color:var(--gray);line-height:1.5;padding:8px 0 8px 18px;position:relative}
+.cost-c li::before{
+  content:"";position:absolute;left:0;top:14px;width:7px;height:1.5px;background:var(--gray-d);
+}
+.cost-f{
+  margin-top:16px;padding-top:14px;border-top:1px solid var(--line);
+  font-size:14.5px;color:var(--white);font-weight:500;line-height:1.45;
+}
+.vs{
+  margin-top:14px;border:1px solid var(--green);background:rgba(24,224,140,.07);
+  padding:26px 20px;
+}
+.vs-l{font-family:var(--mono);font-size:9.5px;letter-spacing:.13em;text-transform:uppercase;color:var(--green);margin-bottom:12px}
+.vs-n{font-family:var(--disp);font-weight:700;font-size:32px;color:var(--green);letter-spacing:-.05em;line-height:1}
+.vs-d{font-size:15px;color:var(--gray);margin-top:14px;line-height:1.55}
+.vs-d b{color:var(--white);font-weight:500}
+
+/* ===== ЧТО МОЖНО ДОБАВИТЬ ПОТОМ ===== */
+.later{margin-top:34px;border:1px solid var(--line)}
+.later .q{border-bottom:0}
+.later .q-b{padding:20px;font-size:16px}
+.later .q-a p{padding:0 20px 8px}
+.later ul{list-style:none;padding:0 20px 20px}
+.later li{font-size:15px;color:var(--gray);padding:6px 0 6px 19px;position:relative;line-height:1.5}
+.later li::before{content:"";position:absolute;left:0;top:14px;width:6px;height:6px;border-left:1.5px solid var(--green);border-bottom:1.5px solid var(--green);transform:rotate(-45deg)}
+.later .fin{padding:0 20px 20px;font-size:14.5px;color:var(--gray-d);line-height:1.55}
+
+/* ===== КАЛЬКУЛЯТОР ===== */
+.calc{
+  margin-top:28px;border:1px solid rgba(24,224,140,.38);border-radius:8px;
+  background:var(--panel);overflow:hidden;max-width:640px;
+  box-shadow:0 0 0 6px rgba(24,224,140,.05),0 24px 60px -24px rgba(24,224,140,.25);
+}
+.calc-hd{
+  padding:15px 18px;border-bottom:1px solid var(--line);
+  font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--green);
+}
+.calc-in{padding:22px 18px 26px}
+.fld{margin-bottom:24px}
+.fld:last-child{margin-bottom:0}
+.fld-t{display:flex;justify-content:space-between;align-items:baseline;gap:14px;margin-bottom:12px}
+.fld-l{font-size:15px;color:var(--gray);line-height:1.4}
+.fld-v{font-family:var(--mono);font-weight:500;font-size:16px;color:var(--green);flex:none}
+input[type=range]{
+  -webkit-appearance:none;appearance:none;width:100%;height:2px;
+  background:var(--line);border-radius:2px;outline:none;cursor:pointer;
+}
+input[type=range]::-webkit-slider-thumb{
+  -webkit-appearance:none;width:26px;height:26px;border-radius:50%;
+  background:var(--green);border:5px solid var(--panel);
+  box-shadow:0 0 0 1px var(--green);cursor:pointer;
+}
+input[type=range]::-moz-range-thumb{
+  width:26px;height:26px;border-radius:50%;background:var(--green);
+  border:5px solid var(--panel);box-shadow:0 0 0 1px var(--green);cursor:pointer;
+}
+.calc-out{border-top:1px solid var(--line);background:#000;padding:20px 18px}
+.out-r{display:flex;justify-content:space-between;gap:14px;padding:9px 0;font-size:14.5px;color:var(--gray)}
+.out-r b{font-family:var(--mono);font-weight:500;color:var(--white);flex:none}
+.out-big{
+  margin-top:14px;padding-top:16px;border-top:1px solid var(--line);
+  display:flex;justify-content:space-between;align-items:baseline;gap:14px;
+}
+.out-big span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--gray-d);line-height:1.4}
+.out-big b{font-family:var(--disp);font-weight:700;font-size:26px;color:var(--green);letter-spacing:-.04em;flex:none}
+.out-sub{display:flex;justify-content:space-between;gap:14px;padding:12px 0 0;font-size:14.5px;color:var(--gray)}
+.out-sub b{font-family:var(--mono);font-weight:500;color:var(--white);flex:none}
+.out-third{
+  margin:18px -18px -20px;padding:18px;background:rgba(24,224,140,.07);
+  border-top:1px solid var(--line);font-size:14.5px;color:var(--gray);line-height:1.55;
+}
+.out-third b{color:var(--white);font-weight:500}
+.calc-note{margin-top:20px;font-size:14.5px;color:var(--gray-d);line-height:1.6;max-width:640px}
 
 /* ===== ЦЕНЫ ===== */
 .plans{margin-top:28px;display:grid;gap:14px}
@@ -324,9 +382,17 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
   .stats{grid-template-columns:repeat(4,1fr)}
   .st{padding:30px 24px}
   .st-n{font-size:46px}
+  .cost{grid-template-columns:1fr 1fr}
+  .calc,.calc-note{margin-left:auto;margin-right:auto}
+  .calc-in{padding:28px 26px 32px}
+  .calc-out{padding:24px 26px}
+  .out-third{margin:22px -26px -24px;padding:22px 26px}
+  .out-big b{font-size:30px}
+  .cost-c{padding:30px 26px}
+  .vs{padding:32px 26px}
+  .vs-n{font-size:38px}
   .plans{grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
   .first-n{font-size:40px}
-  .cmp-hd,.cmp-r{grid-template-columns:1fr 210px 210px}
   .cmp-hd div{font-size:9.5px}
   .rep,.rep-note{margin-left:auto;margin-right:auto}
   .rep-grid{grid-template-columns:repeat(4,1fr)}
@@ -368,7 +434,7 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
     <div>
       <div class="eyebrow">Кафе · Рестораны · Доставка</div>
       <h1>ИИ-сотрудник,<br>который <em>не теряет<br>ни одного гостя</em></h1>
-      <p class="lead">Отвечает гостям в WhatsApp и Instagram. Принимает заказы и брони. Работает круглосуточно.</p>
+      <p class="lead">Принимает заказы в WhatsApp и Instagram. Ночью, в выходные и когда пишут все разом.</p>
     </div>
 
     <!-- БЕЙДЖ -->
@@ -425,42 +491,6 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
     </div>
 
     <p class="demo-note rv">Две минуты. Обычно такой заказ в 22:10 просто теряется.</p>
-  </div>
-</section>
-
-<!-- ЧТО МОЖЕТ -->
-<section class="sec line-top">
-  <div class="wrap">
-    <div class="rv">
-      <div class="eyebrow">Возможности</div>
-      <h2>Что может<br>ИИ-сотрудник</h2>
-    </div>
-    <div class="does rv">
-      <div class="do">
-        <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
-        <div><h3>Принимает заказы</h3><p>Запишет состав, посчитает сумму, отправит на кухню.</p></div>
-      </div>
-      <div class="do">
-        <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
-        <div><h3>Бронирует столы</h3><p>Спросит дату, время, число гостей. Передаст администратору.</p></div>
-      </div>
-      <div class="do">
-        <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
-        <div><h3>Советует, что взять</h3><p>Подберёт на компанию и бюджет. Учтёт, что не едят.</p></div>
-      </div>
-      <div class="do">
-        <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
-        <div><h3>Показывает, о чём писать в соцсетях</h3><p>Считает, о чём спрашивают чаще всего. Это и есть темы для постов.</p></div>
-      </div>
-      <div class="do">
-        <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
-        <div><h3>Собирает отзывы</h3><p>Довольных ведёт на карты. Недовольных — сразу к вам.</p></div>
-      </div>
-      <div class="do">
-        <svg class="tick" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m4 12 5 5L20 6"/></svg>
-        <div><h3>Ведёт базу гостей</h3><p>Кто, когда и что заказывал. Есть кому написать об акции.</p></div>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -570,22 +600,83 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
   </div>
 </section>
 
-<!-- ЧТО МЕНЯЕТСЯ -->
+<!-- ЭКОНОМИКА -->
 <section class="sec line-top">
   <div class="wrap">
     <div class="rv">
-      <div class="eyebrow">Разница</div>
-      <h2>Что меняется<br>в заведении</h2>
-      <p class="lead">Гость пишет как обычно. Меняется то, что дальше.</p>
+      <div class="eyebrow">Деньги</div>
+      <h2>Приём заказов уже<br>стоит вам денег</h2>
+      <p class="lead">Двумя способами сразу. Один вы видите в ведомости, другой — нигде.</p>
     </div>
-    <div class="cmp rv">
-      <div class="cmp-hd"><div>Ситуация</div><div>Сейчас</div><div>С ИИ-сотрудником</div></div>
-      <div class="cmp-r"><div>Ночь и выходные</div><div class="cmp-h">Ждут утра</div><div class="cmp-a">Ответ сразу</div></div>
-      <div class="cmp-r"><div>Пишут все разом</div><div class="cmp-h">Очередь</div><div class="cmp-a">Отвечают всем</div></div>
-      <div class="cmp-r"><div>Стоп-лист и цены</div><div class="cmp-h">Надо уточнять</div><div class="cmp-a">Всегда точно</div></div>
-      <div class="cmp-r"><div>Гость спросил и пропал</div><div class="cmp-h">Не вернулся</div><div class="cmp-a">Напомним</div></div>
-      <div class="cmp-r"><div>О чём спрашивают гости</div><div class="cmp-h">Не считает никто</div><div class="cmp-a">Видно в отчёте</div></div>
+
+    <div class="cost rv">
+      <div class="cost-c">
+        <div class="cost-l">Первое · гости, которых не приняли</div>
+        <ul>
+          <li>Написали ночью — ответа нет до утра</li>
+          <li>Пишут пятеро разом — отвечаете по очереди</li>
+          <li>Не дождался и заказал у соседей</li>
+        </ul>
+        <div class="cost-f">Этих денег нигде не видно. Их просто нет.</div>
+      </div>
+
+      <div class="cost-c">
+        <div class="cost-l">Второе · человек на переписке</div>
+        <ul>
+          <li>Зарплата и налоги каждый месяц</li>
+          <li>8 часов и 5 дней. Ночь и выходные не закрыты</li>
+          <li>Отпуск, больничный, увольнение</li>
+          <li>Ушёл — нового учить с нуля</li>
+          <li>Ошибся в заказе — возврат за ваш счёт</li>
+        </ul>
+        <div class="cost-f">Эти деньги видно каждый месяц.</div>
+      </div>
     </div>
+
+    <div class="vs rv">
+      <div class="vs-l">ИИ-сотрудник</div>
+      <div class="vs-n">от 12 000 ₽ в месяц</div>
+      <div class="vs-d">24 часа, без выходных и больничных. <b>Заказ считает система</b> — не ошибётся в сумме. Поменяли меню — работает по-новому в тот же день.</div>
+    </div>
+
+
+    <div class="calc rv" id="calc">
+      <div class="calc-hd">Посчитайте на своих цифрах</div>
+
+      <div class="calc-in">
+        <div class="fld">
+          <div class="fld-t"><span class="fld-l">Сообщений от гостей в день</span><span class="fld-v" id="v1">40</span></div>
+          <input type="range" id="s1" min="10" max="120" step="5" value="40">
+        </div>
+        <div class="fld">
+          <div class="fld-t"><span class="fld-l">Из них без ответа или ответ позже 15 минут</span><span class="fld-v" id="v2">25%</span></div>
+          <input type="range" id="s2" min="5" max="50" step="1" value="25">
+        </div>
+        <div class="fld">
+          <div class="fld-t"><span class="fld-l">Средний чек доставки</span><span class="fld-v" id="v3">1 500 ₽</span></div>
+          <input type="range" id="s3" min="500" max="4000" step="100" value="1500">
+        </div>
+        <div class="fld">
+          <div class="fld-t"><span class="fld-l">Из десяти, кому ответили быстро, заказывают</span><span class="fld-v" id="v4">2</span></div>
+          <input type="range" id="s4" min="1" max="5" step="1" value="2">
+        </div>
+      </div>
+
+      <div class="calc-out">
+        <div class="out-r"><span>Сообщений за месяц</span><b id="r1">1 200</b></div>
+        <div class="out-r"><span>Из них не приняли вовремя</span><b id="r2">300</b></div>
+        <div class="out-r"><span>Из них заказали бы</span><b id="r3">60</b></div>
+
+        <div class="out-big"><span>Уходит мимо кассы<br>каждый месяц</span><b id="r4">90 000 ₽</b></div>
+        <div class="out-sub"><span>ИИ-сотрудник в месяц</span><b>12 000 ₽</b></div>
+
+        <div class="out-third">Даже если вернуть <b>только треть</b> — это <b id="r5">30 000 ₽</b> в месяц против 12 000 ₽.</div>
+      </div>
+    </div>
+
+    <p class="calc-note rv">Цифры стоят по нижней границе — мы считаем скромно. Не согласны хоть с одной — подвиньте и посмотрите свою.</p>
+
+    <p class="note rv"><b>Зарплату вы знаете наизусть.</b> Сравните её с этой цифрой.</p>
   </div>
 </section>
 
@@ -693,6 +784,22 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
         </ul>
       </div>
 
+    </div>
+
+    <div class="later rv">
+      <div class="q">
+        <button class="q-b">Что можно добавить потом<span class="q-m">+</span></button>
+        <div class="q-a">
+          <ul>
+            <li>Брони столов</li>
+            <li>Рекомендации гостю: на компанию, бюджет и ограничения по еде</li>
+            <li>Отзывы после визита</li>
+            <li>База гостей и рассылки по акциям</li>
+            <li>Instagram и Telegram вдобавок к WhatsApp</li>
+          </ul>
+          <p class="fin">Начинаем с приёма заказов. Остальное обсуждаем, когда он уже работает — не на первой встрече.</p>
+        </div>
+      </div>
     </div>
 
     <p class="note rv"><b>Второй ИИ-сотрудник — дешевле на 20%.</b> Например, для учёта, отчётов или закупок.</p>
@@ -825,6 +932,35 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
   var io=new IntersectionObserver(function(e){ if(e[0].isIntersecting){ play(); io.disconnect(); } },{threshold:.2});
   io.observe(document.getElementById('chat'));
 }
+
+/* ===== Калькулятор ===== */
+(function(){
+  var nf=new Intl.NumberFormat('ru-RU');
+  var FEE=12000;
+  var s=['s1','s2','s3','s4'].map(function(id){return document.getElementById(id)});
+  if(!s[0]) return;
+
+  function calc(){
+    var day=+s[0].value, miss=+s[1].value, check=+s[2].value, conv=+s[3].value;
+    var month=day*30;
+    var lost=Math.floor(month*miss/100);
+    var buy=Math.floor(lost*conv/10);
+    var rub=buy*check;
+
+    document.getElementById('v1').textContent=nf.format(day);
+    document.getElementById('v2').textContent=miss+'%';
+    document.getElementById('v3').textContent=nf.format(check)+' ₽';
+    document.getElementById('v4').textContent=conv;
+
+    document.getElementById('r1').textContent=nf.format(month);
+    document.getElementById('r2').textContent=nf.format(lost);
+    document.getElementById('r3').textContent=nf.format(buy);
+    document.getElementById('r4').textContent=nf.format(rub)+' ₽';
+    document.getElementById('r5').textContent=nf.format(Math.floor(rub/3))+' ₽';
+  }
+  s.forEach(function(el){ el.addEventListener('input',calc) });
+  calc();
+})();
 
 /* ===== Вопросы ===== */
 document.querySelectorAll('.q-b').forEach(function(b){
