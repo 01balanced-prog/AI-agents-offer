@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Баланс — ИИ-сотрудник для кафе и ресторанов</title>
-<meta name="description" content="Отвечает гостям в WhatsApp и Instagram. Принимает заказы и брони. Работает круглосуточно.">
+<meta name="description" content="Повышает число заказов на доставку. Отвечает гостям в WhatsApp и Instagram круглосуточно.">
 
 <meta property="og:type" content="website">
-<meta property="og:title" content="ИИ-сотрудник, который не теряет ни одного гостя">
-<meta property="og:description" content="Отвечает гостям в WhatsApp и Instagram. Принимает заказы и брони. Работает круглосуточно.">
+<meta property="og:title" content="ИИ-сотрудник, который увеличивает заказы на доставку">
+<meta property="og:description" content="Отвечает гостям в WhatsApp и Instagram за секунды. Ночью, в выходные и в час пик.">
 <meta property="og:image" content="logo.jpg">
 <meta name="theme-color" content="#000000">
 
@@ -433,8 +433,8 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
   <div class="wrap hero-in">
     <div>
       <div class="eyebrow">Кафе · Рестораны · Доставка</div>
-      <h1>ИИ-сотрудник,<br>который <em>не теряет<br>ни одного гостя</em></h1>
-      <p class="lead">Принимает заказы в WhatsApp и Instagram. Ночью, в выходные и когда пишут все разом.</p>
+      <h1>ИИ-сотрудник,<br>который <em>увеличивает<br>заказы на доставку</em></h1>
+      <p class="lead">Отвечает гостям в WhatsApp и Instagram за секунды. Ночью, в выходные и в час пик — когда заказы обычно теряются.</p>
     </div>
 
     <!-- БЕЙДЖ -->
@@ -605,8 +605,8 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
   <div class="wrap">
     <div class="rv">
       <div class="eyebrow">Деньги</div>
-      <h2>Приём заказов уже<br>стоит вам денег</h2>
-      <p class="lead">Двумя способами сразу. Один вы видите в ведомости, другой — нигде.</p>
+      <h2>Отсутствие ИИ-сотрудника<br>уже стоит вам денег</h2>
+      <p class="lead">Вы платите сразу два раза. Один платёж вы видите, второй — нет.</p>
     </div>
 
     <div class="cost rv">
@@ -656,16 +656,12 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
           <div class="fld-t"><span class="fld-l">Средний чек доставки</span><span class="fld-v" id="v3">1 500 ₽</span></div>
           <input type="range" id="s3" min="500" max="4000" step="100" value="1500">
         </div>
-        <div class="fld">
-          <div class="fld-t"><span class="fld-l">Из десяти, кому ответили быстро, заказывают</span><span class="fld-v" id="v4">2</span></div>
-          <input type="range" id="s4" min="1" max="5" step="1" value="2">
-        </div>
       </div>
 
       <div class="calc-out">
         <div class="out-r"><span>Сообщений за месяц</span><b id="r1">1 200</b></div>
         <div class="out-r"><span>Из них не приняли вовремя</span><b id="r2">300</b></div>
-        <div class="out-r"><span>Из них заказали бы</span><b id="r3">60</b></div>
+        <div class="out-r"><span>Заказал бы каждый пятый</span><b id="r3">60</b></div>
 
         <div class="out-big"><span>Уходит мимо кассы<br>каждый месяц</span><b id="r4">90 000 ₽</b></div>
         <div class="out-sub"><span>ИИ-сотрудник в месяц</span><b>12 000 ₽</b></div>
@@ -937,20 +933,20 @@ if(window.matchMedia('(prefers-reduced-motion: reduce)').matches){
 (function(){
   var nf=new Intl.NumberFormat('ru-RU');
   var FEE=12000;
-  var s=['s1','s2','s3','s4'].map(function(id){return document.getElementById(id)});
+  var CONV=0.2;                 // заказывает каждый пятый — оценка снизу
+  var s=['s1','s2','s3'].map(function(id){return document.getElementById(id)});
   if(!s[0]) return;
 
   function calc(){
-    var day=+s[0].value, miss=+s[1].value, check=+s[2].value, conv=+s[3].value;
+    var day=+s[0].value, miss=+s[1].value, check=+s[2].value;
     var month=day*30;
     var lost=Math.floor(month*miss/100);
-    var buy=Math.floor(lost*conv/10);
+    var buy=Math.floor(lost*CONV);
     var rub=buy*check;
 
     document.getElementById('v1').textContent=nf.format(day);
     document.getElementById('v2').textContent=miss+'%';
     document.getElementById('v3').textContent=nf.format(check)+' ₽';
-    document.getElementById('v4').textContent=conv;
 
     document.getElementById('r1').textContent=nf.format(month);
     document.getElementById('r2').textContent=nf.format(lost);
