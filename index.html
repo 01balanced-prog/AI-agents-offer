@@ -4,11 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Баланс — ИИ-сотрудник для кафе и ресторанов</title>
-<meta name="description" content="Повышает число заказов на доставку. Отвечает гостям в WhatsApp и Instagram круглосуточно.">
+<meta name="description" content="Принимает заказы на доставку и самовывоз в WhatsApp. Работает круглосуточно.">
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="ИИ-сотрудник, который увеличивает заказы на доставку">
-<meta property="og:description" content="Отвечает гостям в WhatsApp и Instagram за секунды. Ночью, в выходные и в час пик.">
+<meta property="og:description" content="Принимает заказы на доставку и самовывоз прямо в WhatsApp. Ночью, в выходные и в час пик.">
 <meta property="og:image" content="logo.jpg">
 <meta name="theme-color" content="#000000">
 
@@ -327,6 +327,9 @@ input[type=range]::-moz-range-thumb{
   margin:16px -22px 0;padding:14px 22px;border-top:1px solid var(--line);
   font-size:13px;color:var(--gray-d);line-height:1.55;
 }
+.meta{margin:0 -22px;padding:16px 22px;border-top:1px solid var(--line);background:rgba(24,224,140,.05)}
+.meta-r{display:flex;justify-content:space-between;gap:14px;padding:5px 0;font-size:13.5px;color:var(--gray);line-height:1.4}
+.meta-r b{font-family:var(--mono);font-weight:500;color:var(--white);font-size:13.5px;flex:none;text-align:right}
 .total b{color:var(--gray);font-weight:500}
 
 .plan ul{list-style:none;margin:0 -22px;padding:18px 22px 24px;border-top:1px solid var(--line)}
@@ -391,11 +394,11 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
   .cost-c{padding:30px 26px}
   .vs{padding:32px 26px}
   .vs-n{font-size:38px}
-  .plans{grid-template-columns:repeat(3,1fr);gap:18px;align-items:start}
+  .plans{grid-template-columns:1fr 1fr;gap:18px;align-items:start;max-width:840px;margin-left:auto;margin-right:auto}
   .first-n{font-size:40px}
   .cmp-hd div{font-size:9.5px}
   .rep,.rep-note{margin-left:auto;margin-right:auto}
-  .rep-grid{grid-template-columns:repeat(4,1fr)}
+  .rep-grid{grid-template-columns:1fr 1fr}
   .rep-c{padding:22px 17px}
   .rep-n{font-size:24px}
   .contacts{grid-template-columns:repeat(2,1fr);text-align:center;max-width:640px;margin-left:auto;margin-right:auto}
@@ -434,7 +437,7 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
     <div>
       <div class="eyebrow">Кафе · Рестораны · Доставка</div>
       <h1>ИИ-сотрудник,<br>который <em>увеличивает<br>заказы на доставку</em></h1>
-      <p class="lead">Отвечает гостям в WhatsApp и Instagram за секунды. Ночью, в выходные и в час пик — когда заказы обычно теряются.</p>
+      <p class="lead">Принимает заказы на доставку и самовывоз прямо в WhatsApp. Ночью, в выходные и в час пик — когда заказы обычно теряются.</p>
     </div>
 
     <!-- БЕЙДЖ -->
@@ -448,8 +451,8 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
       </div>
       <div class="badge-rows">
         <div class="br"><span>Смена</span><b>24 часа, без выходных</b></div>
-        <div class="br"><span>Отвечает</span><b>WhatsApp · Instagram · Telegram</b></div>
-        <div class="br"><span>Знает</span><b>Всё меню, цены и стоп-лист</b></div>
+        <div class="br"><span>Где работает</span><b>WhatsApp</b></div>
+        <div class="br"><span>Знает</span><b>Меню, цены и стоп-лист из iiko</b></div>
         <div class="br"><span>Больничные</span><b>Нет</b></div>
       </div>
     </div>
@@ -498,9 +501,9 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
 <section class="sec deliv">
   <div class="wrap">
     <div class="rv">
-      <div class="eyebrow">Что вы получаете</div>
+      <div class="eyebrow">Тариф «Бизнес»</div>
       <h2>Отчёт каждый<br>понедельник</h2>
-      <p class="lead">Он видит все диалоги. Раз в неделю сам присылает отчёт.</p>
+      <p class="lead">Показывает то, чего не видно в кассе: сколько гостей написали и ушли без заказа. И на чём именно ушли.</p>
     </div>
 
     <div class="rep rv">
@@ -516,53 +519,35 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
 
       <div class="rep-grid">
         <div class="rep-c">
-          <div class="rep-l">Заказов</div>
+          <div class="rep-l">Приняла заказов</div>
           <div class="rep-n">187</div>
           <div class="rep-s">на 412 000 ₽</div>
         </div>
         <div class="rep-c">
-          <div class="rep-l">Средний чек</div>
-          <div class="rep-n">2 204 ₽</div>
-          <div class="rep-s">+3,2% за неделю</div>
-        </div>
-        <div class="rep-c">
-          <div class="rep-l">Пик заказов</div>
-          <div class="rep-n">12–14 и 19–21</div>
-          <div class="rep-s">74% всех заказов</div>
-        </div>
-        <div class="rep-c">
-          <div class="rep-l">Вернулись снова</div>
-          <div class="rep-n">42 гостя</div>
-          <div class="rep-s">22,5% заказов</div>
+          <div class="rep-l">Написали, но не заказали</div>
+          <div class="rep-n">64 гостя</div>
+          <div class="rep-s">каждый четвёртый, кто написал</div>
         </div>
       </div>
 
       <div class="rep-b">
-        <div class="rep-bt">Спрашивали чаще всего</div>
-        <div class="rep-r"><span>«Можно без острого?»</span><b>31</b></div>
-        <div class="rep-r"><span>«Какой минимум заказа?»</span><b>18</b></div>
-        <div class="rep-r"><span>«Сколько ждать доставку?»</span><b>14</b></div>
-        <div class="rep-r"><span>«Есть халяль?»</span><b>9</b></div>
-      </div>
-
-      <div class="rep-b">
-        <div class="rep-bt">Что ещё заметно</div>
-        <div class="rep-r"><span>Заказов, когда вы закрыты</span><b>23</b></div>
-        <div class="rep-r"><span>Адреса вне зоны доставки</span><b>6</b></div>
+        <div class="rep-bt">На чём ушли</div>
+        <div class="rep-r"><span>Не нашли нужную позицию</span><b>28</b></div>
+        <div class="rep-r"><span>Не устроила доставка</span><b>21</b></div>
+        <div class="rep-r"><span>Попали в стоп-лист</span><b>15</b></div>
       </div>
 
       <div class="rep-rec">
         <div class="rep-bt">Что с этим делать</div>
         <ul>
-          <li><b>Добавьте в меню «без острого».</b> Спрашивают каждый день.</li>
-          <li><b>Снимите сторис про минимум заказа.</b> Закроет 18 вопросов.</li>
-          <li><b>Продвигайте манты к 19:00.</b> Тогда их берут чаще всего.</li>
-          <li><b>Подумайте о ночной доставке.</b> 23 заказа — когда вы закрыты.</li>
+          <li><b>28 гостей искали то, чего нет в меню.</b> Список внутри — посмотрите, что стоит добавить.</li>
+          <li><b>21 отказался из-за доставки.</b> Проверьте зону и время.</li>
+          <li><b>15 попали в стоп-лист.</b> Если позиция кончается часто — это вопрос к закупке.</li>
         </ul>
       </div>
     </div>
 
-    <p class="rep-note rv">Цифры для примера. У вас будут свои — уже с первой недели.</p>
+    <p class="rep-note rv">Цифры для примера. Первый отчёт приходит через месяц работы — раньше данных не хватает. На тарифе «Старт» отчёта нет.</p>
   </div>
 </section>
 
@@ -689,7 +674,7 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
 
       <div class="plan">
         <div class="plan-n">Старт</div>
-        <div class="plan-f">Одна точка, только WhatsApp</div>
+        <div class="plan-f">Небольшое заведение</div>
 
         <div class="first">
           <div class="first-l">Первый платёж</div>
@@ -709,24 +694,32 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
 
         <div class="total">Всего <b>100 000 ₽</b> · далее <b>12 000 ₽</b> в месяц</div>
 
+        <div class="meta">
+          <div class="meta-r"><span>Заказов в месяц включено</span><b>500<br>≈17 в день</b></div>
+          <div class="meta-r"><span>Заказ сверх включённого</span><b>24 ₽</b></div>
+          <div class="meta-r"><span>Срок запуска</span><b>2 недели</b></div>
+        </div>
+
         <ul>
-          <li>ИИ-сотрудник в WhatsApp</li>
-          <li>Меню, цены, часы работы</li>
-          <li>Заказы и брони</li>
-          <li>Поддержка и правки</li>
+          <li>Заказы на доставку и самовывоз в WhatsApp</li>
+          <li>Меню, цены и стоп-лист из iiko</li>
+          <li>Считает заказ и выдаёт итоговый чек</li>
+          <li>Уточняет адрес: дом, квартира, подъезд, этаж</li>
+          <li>Следит, чтобы кухня подтвердила заказ</li>
+          <li>Сложный случай передаёт человеку</li>
         </ul>
       </div>
 
       <div class="plan hot">
-        <div class="tag">Берут чаще</div>
+        <div class="tag">С отчётом</div>
         <div class="plan-n">Бизнес</div>
-        <div class="plan-f">Заведение с доставкой и соцсетями</div>
+        <div class="plan-f">Крупное заведение</div>
 
         <div class="first">
           <div class="first-l">Первый платёж</div>
           <div class="first-n">45 000 ₽</div>
           <div class="first-in">
-            <div>Подключаем WhatsApp и Instagram</div>
+            <div>Подключаем WhatsApp</div>
             <div>Подключаем iiko или вашу программу</div>
             <div>Собираем прототип — вы его проверяете</div>
           </div>
@@ -740,65 +733,25 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
 
         <div class="total">Всего <b>150 000 ₽</b> · далее <b>25 000 ₽</b> в месяц</div>
 
+        <div class="meta">
+          <div class="meta-r"><span>Заказов в месяц включено</span><b>1 500<br>≈50 в день</b></div>
+          <div class="meta-r"><span>Заказ сверх включённого</span><b>17 ₽</b></div>
+          <div class="meta-r"><span>Срок запуска</span><b>3–4 недели</b></div>
+        </div>
+
         <ul>
           <li>Всё из «Старта»</li>
-          <li>WhatsApp, Instagram, Telegram</li>
-          <li>Заказы на доставку</li>
-          <li>Отзывы после визита</li>
-          <li>База гостей и рассылки</li>
-          <li>Отчёт по запросам гостей</li>
-        </ul>
-      </div>
-
-      <div class="plan">
-        <div class="plan-n">Корпоратив</div>
-        <div class="plan-f">Сеть заведений</div>
-
-        <div class="first">
-          <div class="first-l">Первый платёж</div>
-          <div class="first-n">120 000 ₽</div>
-          <div class="first-in">
-            <div>Подключаем все ваши каналы</div>
-            <div>Подключаем iiko или вашу программу</div>
-            <div>Собираем прототип — вы его проверяете</div>
-          </div>
-        </div>
-
-        <div class="rest">
-          <div class="rest-l">Дальше по этапам</div>
-          <div class="rest-r"><b>120 000 ₽</b><span>бета-тест на гостях</span></div>
-          <div class="rest-r"><b>160 000 ₽</b><span>внедрение и запуск</span></div>
-        </div>
-
-        <div class="total">Всего <b>400 000 ₽</b> · далее <b>50 000 ₽</b> в месяц</div>
-
-        <ul>
-          <li>Все точки в одном месте</li>
-          <li>Несколько ИИ-сотрудников</li>
-          <li>Связка с вашей программой учёта</li>
-          <li>Свой менеджер проекта</li>
+          <li>Отчёт владельцу каждую неделю</li>
+          <li>Видно, сколько гостей ушло без заказа</li>
+          <li>И на чём именно они ушли</li>
         </ul>
       </div>
 
     </div>
 
-    <div class="later rv">
-      <div class="q">
-        <button class="q-b">Что можно добавить потом<span class="q-m">+</span></button>
-        <div class="q-a">
-          <ul>
-            <li>Брони столов</li>
-            <li>Рекомендации гостю: на компанию, бюджет и ограничения по еде</li>
-            <li>Отзывы после визита</li>
-            <li>База гостей и рассылки по акциям</li>
-            <li>Instagram и Telegram вдобавок к WhatsApp</li>
-          </ul>
-          <p class="fin">Начинаем с приёма заказов. Остальное обсуждаем, когда он уже работает — не на первой встрече.</p>
-        </div>
-      </div>
-    </div>
+    <p class="note rv"><b>Заказов больше, чем включено — доплачиваете по той же цене.</b> Никаких штрафов. Когда лишних становится много, выгоднее перейти на «Бизнес» — посчитаем вместе на ваших цифрах.</p>
 
-    <p class="note rv"><b>Второй ИИ-сотрудник — дешевле на 20%.</b> Например, для учёта, отчётов или закупок.</p>
+    <p class="note rv"><b>Несколько точек.</b> Каждая точка — своя подписка. Вторая и следующие со скидкой 30%, внедрение каждой следующей — 60 000 ₽.</p>
   </div>
 </section>
 
@@ -813,9 +766,10 @@ footer{padding:26px 0 32px;text-align:center;font-family:var(--mono);font-size:1
       <div class="q"><button class="q-b">Гость поймёт, что это не человек?<span class="q-m">+</span></button><div class="q-a"><p>Он не притворяется человеком — представляется помощником заведения. Но пишет живо, вашими словами. Без кнопок и роботных фраз.</p></div></div>
       <div class="q"><button class="q-b">А если он не знает ответа?<span class="q-m">+</span></button><div class="q-a"><p>Не придумывает. Скажет, что уточнит, и передаст диалог сотруднику.</p></div></div>
       <div class="q"><button class="q-b">Что нужно от вас?<span class="q-m">+</span></button><div class="q-a"><p>Разговор на 40 минут, меню с ценами и доступ к рабочему номеру. Остальное делаем мы.</p></div></div>
-      <div class="q"><button class="q-b">Надо менять номер?<span class="q-m">+</span></button><div class="q-a"><p>Нет. Он работает на вашем номере и вашем Instagram. Гость увидит только скорость ответа.</p></div></div>
+      <div class="q"><button class="q-b">Надо менять номер?<span class="q-m">+</span></button><div class="q-a"><p>Нет. Он работает на вашем рабочем номере WhatsApp. Гость увидит только скорость ответа.</p></div></div>
       <div class="q"><button class="q-b">У нас нет учётной программы<span class="q-m">+</span></button><div class="q-a"><p>Подойдёт. Заказы придут в чат администратора. Поставите программу позже — подключим.</p></div></div>
       <div class="q"><button class="q-b">Меню меняется. Кто обновляет?<span class="q-m">+</span></button><div class="q-a"><p>Мы. Присылаете новое меню — обновляем. Входит в оплату.</p></div></div>
+      <div class="q"><button class="q-b">А если заказов будет больше, чем в тарифе?<span class="q-m">+</span></button><div class="q-a"><p>Доплачиваете за лишние по той же цене, что внутри тарифа. Никаких штрафов. Когда лишних становится много, выгоднее перейти на «Бизнес» — посчитаем вместе.</p></div></div>
       <div class="q"><button class="q-b">Как понять, что подойдёт нам?<span class="q-m">+</span></button><div class="q-a"><p>Для этого оплата и разбита. Первый платёж — за прототип. Сами задаёте вопросы своих гостей и смотрите ответы. Подходит — идём дальше.</p></div></div>
     </div>
   </div>
